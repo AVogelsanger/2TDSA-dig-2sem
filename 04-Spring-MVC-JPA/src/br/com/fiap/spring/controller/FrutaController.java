@@ -11,6 +11,7 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import br.com.fiap.spring.dao.FrutaDAO;
+import br.com.fiap.spring.exception.RegistroNaoEncontradoException;
 import br.com.fiap.spring.model.Fruta;
 
 @Controller
@@ -20,6 +21,22 @@ public class FrutaController {
 	@Autowired
 	private FrutaDAO dao;
 	
+	@Transactional
+	@PostMapping("excluir")
+	public String remover(int codigo, RedirectAttributes r) {
+		try {
+			dao.excluir(codigo);
+			r.addFlashAttribute("msg", "Fruta removida");
+		} catch (RegistroNaoEncontradoException e) {
+			e.printStackTrace();
+		}
+		return "redirect:/fruta/listar";
+	}
+	
+	@GetMapping(value="pesquisar")
+	public ModelAndView pesquisarFruta(String pesquisa) {
+		return new ModelAndView("fruta/lista").addObject("frutas", dao.pesquisarPorNome(pesquisa));
+	}
 	
 	@Transactional
 	@PostMapping("editar")

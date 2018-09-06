@@ -23,9 +23,10 @@
 			<form:label path="valor">Valor</form:label>
 			<form:input path="valor" cssClass="form-control"/>
 		</div>
+		
 		<input type="submit" value="Editar" class="btn btn-primary">
 		
-		
+		<a href="<c:url value="/fruta/listar/"/>">Cancelar</a>
 		<form:hidden path="codigo"/>
 	</form:form>
 
