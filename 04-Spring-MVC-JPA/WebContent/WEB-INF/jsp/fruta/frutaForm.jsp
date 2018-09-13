@@ -30,6 +30,14 @@
 			<label for="idValor">Valor</label>
 			<input type="text" name="valor"  placeholder="R$" id="idValor" class="form-control">
 		</div>
+		<div class="form-group">
+			<label for="id-data">Data de Vencimento</label>
+			<input type="text" name="dataVencimento" placeholder=" / / " id="id-data" class=form-control">
+		</div>
+		<div class="form-group">
+			<input disabled="disabled" type="checkbox" value="false" name="promocao" id="id-promocao">
+			<label for="id-promocao">Promoção</label>
+		</div>
 		<div>
 			<input type="submit" value="cadastrar" class="btn btn-primary" >
 		</div>

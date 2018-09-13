@@ -1,5 +1,7 @@
 package br.com.fiap.spring.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,18 @@ public class FrutaController {
 	private FrutaDAO dao;
 	
 	@Transactional
+	@PostMapping("promover")
+	public ModelAndView calcularDesconto(int codigo, double desconto, RedirectAttributes r) {
+		
+		Fruta fruta = dao.buscar(codigo);
+		fruta.setValor(fruta.getValor() - fruta.getValor() * desconto / 100);
+		fruta.setPromocao(true);
+		dao.atualizar(fruta);
+		r.addFlashAttribute("msg", "Fruta em promoção!");
+		return new ModelAndView("redirect:/fruta/listar");
+	}
+	
+	@Transactional
 	@PostMapping("excluir")
 	public String remover(int codigo, RedirectAttributes r) {
 		try {
@@ -35,7 +49,8 @@ public class FrutaController {
 	
 	@GetMapping(value="pesquisar")
 	public ModelAndView pesquisarFruta(String pesquisa) {
-		return new ModelAndView("fruta/lista").addObject("frutas", dao.pesquisarPorNome(pesquisa));
+		List<Fruta> lista = dao.pesquisarPorNome(pesquisa);
+		return new ModelAndView("fruta/lista").addObject("frutas", lista);
 	}
 	
 	@Transactional
