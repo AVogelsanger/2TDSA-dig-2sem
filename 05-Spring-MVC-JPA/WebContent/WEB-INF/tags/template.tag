@@ -12,7 +12,7 @@
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-	  <a class="navbar-brand" href="#">FIAP</a>
+	  <a class="navbar-brand" href="#">VogueTour</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
 	  </button>
@@ -27,11 +27,11 @@
 	      </li>
 	      <li class="nav-item dropdown">
 	        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-	          Fruta
+	          Passagem
 	        </a>
 	        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-	          <a class="dropdown-item" href="<c:url value="/fruta/cadastrar"/>">Cadastrar</a>
-	          <a class="dropdown-item" href="<c:url value="/fruta/listar"/>">Listar</a>
+	          <a class="dropdown-item" href="<c:url value="/passagem/cadastrar"/>">Cadastrar</a>
+	          <a class="dropdown-item" href="<c:url value="/passagem/listar"/>">Listar</a>
 	        </div>
 	      </li>
 	      <li class="nav-item">
@@ -39,9 +39,11 @@
 	      </li>
 	    </ul>
 	   
-	    <c:url value="/fruta/pesquisar" var="url"/>
+	    <c:url value="/passagem/pesquisar" var="url"/>
 	    <form class="form-inline my-2 my-lg-0" action="${url }" method="get">
-	      <input name="pesquisa" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
+	      <input name="origem" class="form-control mr-sm-2" type="search" placeholder="Origem" aria-label="Search">
+	      <input name="destino" class="form-control mr-sm-2" type="search" placeholder="Destino" aria-label="Search">
+	      <input name="data" class="form-control mr-sm-2" type="search" placeholder="Data" aria-label="Search">
 	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 	    </form>
 	  </div>

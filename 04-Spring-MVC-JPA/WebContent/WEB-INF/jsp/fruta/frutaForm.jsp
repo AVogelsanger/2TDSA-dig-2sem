@@ -15,7 +15,7 @@
 	
 	<form action="cadastrar" method="post">
 		<div class="form-group">
-			<label for="idNome">Nome</label>
+			<label for="idName">Nome</label>
 			<input type="text" name="nome" id="idName" class="form-control">
 		</div>
 		<div class="form-group">
@@ -32,7 +32,7 @@
 		</div>
 		<div class="form-group">
 			<label for="id-data">Data de Vencimento</label>
-			<input type="text" name="dataVencimento" placeholder=" / / " id="id-data" class=form-control">
+			<input type="text" name="dataVencimento" placeholder=" / / " id="id-data" class="form-control">
 		</div>
 		<div class="form-group">
 			<input disabled="disabled" type="checkbox" value="false" name="promocao" id="id-promocao">

@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 @Entity
 @Table(name="T_PASSAGEM")
 @SequenceGenerator(name="passagem", allocationSize=1)
@@ -25,6 +27,7 @@ public class Passagem {
 	@Column(name="ds_origem", nullable=false)
 	private String origem;
 	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
 	@Column(name="dt_passagem", nullable=false)
 	private Calendar data;
 	
@@ -41,7 +44,6 @@ public class Passagem {
 		super();
 	}
 
-	
 	public Passagem(int codigo, String destino, String origem, Calendar data, boolean checkIn, boolean bagagem,
 			double valor) {
 		super();
@@ -53,8 +55,6 @@ public class Passagem {
 		this.bagagem = bagagem;
 		this.valor = valor;
 	}
-
-
 
 	public int getCodigo() {
 		return codigo;
