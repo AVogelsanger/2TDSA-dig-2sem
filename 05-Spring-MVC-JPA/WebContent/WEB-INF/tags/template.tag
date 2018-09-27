@@ -9,6 +9,11 @@
 <title>Spring MVC | ${titulo}</title>
 <link rel="stylesheet" type="text/css" 
 		href="<c:url value="/resources/css/bootstrap.min.css"/>">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" 
+		integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" 
+		crossorigin="anonymous">
+				
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -43,7 +48,7 @@
 	    <form class="form-inline my-2 my-lg-0" action="${url }" method="get">
 	      <input name="origem" class="form-control mr-sm-2" type="search" placeholder="Origem" aria-label="Search">
 	      <input name="destino" class="form-control mr-sm-2" type="search" placeholder="Destino" aria-label="Search">
-	      <input name="data" class="form-control mr-sm-2" type="search" placeholder="Data" aria-label="Search">
+	      <input name="data" class="form-control mr-sm-2" type="text" placeholder="Data" aria-label="Search">
 	      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Buscar</button>
 	    </form>
 	  </div>

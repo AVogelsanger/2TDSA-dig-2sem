@@ -8,4 +8,6 @@ import br.com.fiap.spring.model.Passagem;
 public interface PassagemDAO extends GenericDAO<Passagem, Integer>{
 	
 	List<Passagem> buscarPor(String origem, String destino, Calendar data);
+	
+	void fazerCheckin(int codigo);
 }

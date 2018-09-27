@@ -21,5 +21,13 @@ public class PassagemDAOImpl extends GenericDAOImpl<Passagem, Integer> implement
 					.getResultList();
 	}
 
+	@Override
+	public void fazerCheckin(int codigo) {
+		Passagem passagem = buscar(codigo);
+		passagem.setCheckIn(true);
+		atualizar(passagem);
+		
+	}
+
 	
 }
